@@ -136,7 +136,7 @@
 
 ---"vscoq/proofView" notification (server → client) parameter.
 ---@class vscoq.ProofViewNotification
----@field proof? vscoq.ProofViewGoals
+---@field proof vscoq.ProofViewGoals|vim.NIL|nil
 ---@field messages vscoq.CoqMessage[]
 
 ---"vscoq/moveCursor" notification (server → client) parameter.

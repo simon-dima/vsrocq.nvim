@@ -68,7 +68,7 @@ end
 function M.proofView(proofView, items)
   local tl = TaggedLines.new()
 
-  if proofView.proof then
+  if type(proofView.proof) == "table" then
     local stat = {}
     if #proofView.proof.goals > 0 then
       stat[#stat + 1] = #proofView.proof.goals .. ' goals'
@@ -91,7 +91,7 @@ function M.proofView(proofView, items)
         tl:add_line('')
       end
     end
-    if proofView.proof then
+    if type(proofView.proof) == "table" then
       if item == 'goals' then
         if #proofView.proof.goals > 0 then
           tl:append(M.goals(proofView.proof.goals))
