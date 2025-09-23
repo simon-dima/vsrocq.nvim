@@ -48,7 +48,7 @@ end
 
 ---change config and send notification
 function VSCoqNvim:update_lsp_config()
-  self.lc.notify('workspace/didChangeConfiguration', { settings = self.config:to_lsp_options() })
+  self.lc:notify('workspace/didChangeConfiguration', { settings = self.config:to_lsp_options() })
 end
 
 function VSCoqNvim:manual()
@@ -69,13 +69,13 @@ function VSCoqNvim:updateHighlights(highlights)
   self.buffers[bufnr].highlights = highlights
   -- for _, range in ipairs(highlights.processingRange) do
   for _, range in ipairs(highlights.processedRange) do
-    vim.highlight.range(
+    vim.hl.range(
       bufnr,
       self.highlight_ns,
       'CoqtailChecked',
       util.position_lsp_to_api(bufnr, range['start'], self.lc.offset_encoding),
       util.position_lsp_to_api(bufnr, range['end'], self.lc.offset_encoding),
-      { priority = vim.highlight.priorities.user + 1 }
+      { priority = vim.hl.priorities.user + 1 }
     )
   end
 end
@@ -247,7 +247,7 @@ function VSCoqNvim:interpretToPoint(bufnr, position)
     textDocument = util.make_versioned_text_document_params(bufnr),
     position = util.make_position_params(bufnr, position, self.lc.offset_encoding),
   }
-  return self.lc.notify('vscoq/interpretToPoint', params)
+  return self.lc:notify('vscoq/interpretToPoint', params)
 end
 commands[#commands + 1] = 'interpretToPoint'
 
@@ -258,7 +258,7 @@ function VSCoqNvim:step(method, bufnr)
   local params = {
     textDocument = util.make_versioned_text_document_params(bufnr),
   }
-  return self.lc.notify(method, params)
+  return self.lc:notify(method, params)
 end
 
 function VSCoqNvim:stepForward()
