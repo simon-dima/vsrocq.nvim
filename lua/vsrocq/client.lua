@@ -196,7 +196,7 @@ function VSRocqNvim:ensure_proofview_panel()
     return
   end
   self.proofview_panel = vim.api.nvim_create_buf(false, true)
-  vim.bo[self.proofview_panel].filetype = 'coq-goals'
+  vim.bo[self.proofview_panel].filetype = 'rocq-goals'
 end
 
 function VSRocqNvim:ensure_query_panel()
@@ -207,7 +207,7 @@ function VSRocqNvim:ensure_query_panel()
     return
   end
   self.query_panel = vim.api.nvim_create_buf(false, true)
-  vim.bo[self.query_panel].filetype = 'coq-infos'
+  vim.bo[self.query_panel].filetype = 'rocq-infos'
 end
 
 function VSRocqNvim:panels()
