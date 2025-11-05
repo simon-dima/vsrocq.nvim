@@ -82,7 +82,7 @@ Some settings in VsRocq's [package.json][] should be configured in nvim's LSP cl
 
 | Key                | Type                               | Default value                      | Description                                                                                                                    |
 | ------------------ | ---------------------------------- | ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `lsp.cmd`          | `string[]`                         | `{ "vscoqtop" }`                   | Path to `vsrocqtop` (e.g. `path/to/vsrocq/bin/vsrocqtop`) and arguments passed                                                    |
+| `lsp.cmd`          | `string[]`                         | `{ "vsrocqtop" }`                   | Path to `vsrocqtop` (e.g. `path/to/vsrocq/bin/vsrocqtop`) and arguments passed                                                    |
 | `lsp.trace`        | `"off" \| "messages" \| "verbose"` | `"off"`                            | Toggles the tracing of communications between the server and client                                                            |
 
 ### Memory management (since >= vsrocq 2.1.7)
