@@ -7,7 +7,7 @@
 ---Position for "mark-like" indexing (1-based line, 0-based column) (:h api-indexing).
 ---@class MarkPosition: { [1]: integer, [2]: integer }
 
--- https://github.com/coq-community/vscoq/blob/main/docs/protocol.md
+-- https://github.com/rocq-prover/vsrocq/blob/main/docs/protocol.md
 
 -- # Configuration
 
@@ -147,7 +147,7 @@
 
 -- # Query panel
 
--- TODO: query response does not contain appropriate line breaks for window width (unlike coqide)
+-- TODO: query response does not contain appropriate line breaks for window width (unlike rocqide)
 
 ---"vsrocq/search" request parameter.
 ---@class vsrocq.SearchRocqRequest

@@ -15,7 +15,7 @@
 --
 -- See also
 -- * https://ocaml.org/manual/5.2/api/Format_tutorial.html
--- * vscoq's implementation: https://github.com/coq-community/vscoq/pull/900
+-- * vsrocq's implementation: https://github.com/rocq-prover/vsrocq/pull/900
 -- * related: https://www.reddit.com/r/ProgrammingLanguages/comments/vzp7td/pretty_printing_which_paper/
 
 local TaggedLines = require('vsrocq.tagged_lines')
@@ -193,7 +193,7 @@ local function PpString(pp_root)
         table.insert(tag_stack, { #lines, cursor_byte, [0] = pp[2] })
       elseif pp[1] == 'Ppcmd_print_break' then
         ---@cast pp vsrocq.PpString.Ppcmd_print_break
-        -- NOTE: CoqMessage contains breaks without enclosing box.
+        -- NOTE: RocqMessage contains breaks without enclosing box.
         -- This behaves like regular text wrapping.
         local top = #box_stack > 0 and box_stack[#box_stack] or { mode = 1, indent = 0 }
         if top.mode > 0 and (cursor + pp.size > LINE_SIZE or top.mode == 2) then

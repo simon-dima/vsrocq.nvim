@@ -317,7 +317,7 @@ function VSRocqNvim:searchResult(result)
   -- Because of that, the panel should maintain TaggedLines to which the new items are appended.
   -- But it turns out there is no reason for search to be implemented that way.
   -- So let's not care about it and wait for the fix.
-  -- https://github.com/coq-community/vscoq/issues/906#issuecomment-2353000748
+  -- https://github.com/rocq-prover/vsrocq/issues/906#issuecomment-2353000748
   local tl = render.searchRocqResult(result)
   vim.api.nvim_buf_set_lines(self.query_panel, -1, -1, false, tl[1])
 end

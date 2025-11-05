@@ -1,8 +1,8 @@
 -- ## Lsp Options
 -- Configuration for the language server
 -- (is separate to *Config* because this is what's actually sent to the server)
--- is following setting of vscoqtop
---- https://github.com/coq/vscoq/blob/main/language-server/protocol/settings.ml
+-- is following setting of vsrocqtop
+--- https://github.com/rocq-prover/vsrocq/blob/main/language-server/protocol/settings.ml
 
 ---@class vsrocq.LspOptions
 local LspOptions = {

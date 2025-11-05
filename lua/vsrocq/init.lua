@@ -1,17 +1,17 @@
 local M = {}
 
 -- Some options values are used both in the server and the client, e.g.,
--- vscoq.proof.mode is used in "check_mode" variable in server, and "goalsHook" in client.
+-- vsrocq.proof.mode is used in "check_mode" variable in server, and "goalsHook" in client.
 --
 -- The vscode client forwards the entire config as `initializationOptions` to the server.
 -- The server itself doesn't have default config values,
 -- so we should forward the config as `init_options`, not `settings`.
 --
--- https://github.com/coq-community/vscoq/blob/main/client/package.json
--- https://github.com/coq-community/vscoq/blob/main/language-server/protocol/settings.ml
--- https://github.com/coq-community/vscoq/blob/main/docs/protocol.md#configuration
+-- https://github.com/rocq-prover/vsrocq/blob/main/client/package.json
+-- https://github.com/rocq-prover/vsrocq/blob/main/language-server/protocol/settings.ml
+-- https://github.com/rocq-prover/vsrocq/blob/main/docs/protocol.md#configuration
 --
--- The "Coq configuration" (vscoq.trace.server, ...) are low-level client-only config handled by vim.lsp.start_client().
+-- The "Rocq configuration" (vsrocq.trace.server, ...) are low-level client-only config handled by vim.lsp.start_client().
 
 local Config = require('vsrocq.config')
 
